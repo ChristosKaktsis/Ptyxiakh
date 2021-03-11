@@ -6,9 +6,9 @@ public class Items_In_Site {
     private String htmlText;
     private String imageUrl;
 
-    public Items_In_Site(String htmlText, String imageUrl) {
+    public Items_In_Site(String htmlText) {
         this.htmlText = htmlText;
-        this.imageUrl = imageUrl;
+
     }
 
     public String getHtmlText() {

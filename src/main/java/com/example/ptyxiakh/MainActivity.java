@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Execute the class AsyncTask to get the data from website
+        Content content = new Content();
+        content.execute();
+
 
     }
 
@@ -68,6 +72,38 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.flfragment, fragment)
                 .commit();
 
+    }
+
+    public class Content extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+
+                String url = "https://www.iee.ihu.gr/about/";
+                Document doc = Jsoup.connect(url).get();
+                Elements data = doc.select("div.entry-content")
+                        .select("p");
+                int size = data.size();
+                for (int i = 0; i<size; i++) {
+                    String dataText = data.select("p")
+                            .select("p")
+                            .eq(i)
+                            .text();
+                    items_in_sites.add(new Items_In_Site(dataText));
+                    Log.d("items","text"+dataText);
+
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
     }
 
 }
