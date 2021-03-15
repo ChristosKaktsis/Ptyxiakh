@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About_fragment">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="1dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView_aboutus"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView_aboutus"
+                    android:layout_width="197dp"
+                    android:layout_height="214dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView_aboutus2"
+                    android:layout_width="197dp"
+                    android:layout_height="214dp"/>
+
+                <ImageView
+                    android:id="@+id/imageView_aboutus2"
+                    android:layout_width="178dp"
+                    android:layout_height="165dp" />
+
+            </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView_aboutus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/textView_aboutus4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
