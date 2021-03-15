@@ -40,16 +40,7 @@ public class Main_Fragment extends Fragment {
         aboutusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                About_fragment about = new About_fragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("title","all Ok till now");
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.flfragment,about,null)
-                        .addToBackStack(null);
-                about.setArguments(bundle);
-                fragmentTransaction.commit();
-
+                ((MainActivity) getActivity()).callAsyncClass();
             }
         });
 

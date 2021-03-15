@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
     Fragment profile_fragment = new Profile_fragment();
 
     public ArrayList<Items_In_Site> items_in_sites = new ArrayList<>();
+    //
+    //use this to get the data ans send it to fragment
+    public ArrayList<String> textData = new ArrayList<>();
+    public ArrayList<String> imageURLData = new ArrayList<>();
 
     BottomNavigationView bottomNavigationView;
 
@@ -59,11 +63,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Execute the class AsyncTask to get the data from website
-        Content content = new Content();
-        content.execute();
-
-
     }
 
     //Add the fragment in the Frame layout
@@ -71,9 +70,16 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.flfragment, fragment)
                 .commit();
-
     }
 
+    //call the Async method
+    public void callAsyncClass() {
+        new Content().execute();
+    }
+
+    //
+    //Get data from web with Async
+    //
     public class Content extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... voids) {
@@ -85,12 +91,17 @@ public class MainActivity extends AppCompatActivity {
                         .select("p");
                 int size = data.size();
                 for (int i = 0; i<size; i++) {
-                    String dataText = data.select("p")
+                    String text1 = data.select("p")
                             .select("p")
                             .eq(i)
                             .text();
-                    items_in_sites.add(new Items_In_Site(dataText));
-                    Log.d("items","text"+dataText);
+                    textData.add(text1);
+                    String img =data.select("p")
+                            .select("img")
+                            .eq(i)
+                            .attr("src");
+                    imageURLData.add(img);
+                    Log.d("items","text"+textData);
 
                 }
 
@@ -102,7 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+
             super.onPostExecute(aVoid);
+
+            setCurrentFragment(About_fragment.newInstance(textData, imageURLData));
         }
     }
 
