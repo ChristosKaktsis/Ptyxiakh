@@ -40,7 +40,11 @@ public class Main_Fragment extends Fragment {
         aboutusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).callAsyncClass();
+                //check if there is a internet connection and call the About_Fragment
+                if (new MainActivity().isConnected(view)) {
+                    ((MainActivity) getActivity()).callAsyncClass();
+                }
+
             }
         });
 

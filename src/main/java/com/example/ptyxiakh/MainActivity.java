@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -47,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         //set the first fragment when the app starts
         setCurrentFragment(main_fragment);
 
+
+
         //create the navigation menu and set onclick events for every button on the menu
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,8 +76,41 @@ public class MainActivity extends AppCompatActivity {
     public void setCurrentFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.flfragment, fragment)
+                .addToBackStack("")
                 .commit();
     }
+
+    //
+    //Check for connection in the internet
+    //
+    public boolean isConnected(View view) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) view.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo_wifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo networkInfo_mobile = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if ((networkInfo_wifi !=null && networkInfo_wifi.isConnected()) || networkInfo_mobile != null && networkInfo_mobile.isConnected()) {
+            return true;
+        }
+        else {
+            showDialog(view);
+            return false;
+        }
+    }
+
+    //
+    //Show toast if not connect
+    //
+    private void showDialog(View view) {
+        Context context = view.getContext();
+        CharSequence text = "NO INTERNET CONNECTION";
+        int duration = Toast.LENGTH_LONG;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.setGravity(Gravity.CENTER,0 ,0);
+        toast.show();
+    }
+
 
     //call the Async method
     public void callAsyncClass() {
