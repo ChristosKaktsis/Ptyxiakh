@@ -15,51 +15,43 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="1dp">
+            android:padding="10dp">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/imageView_aboutus"
-                    android:layout_width="178dp"
-                    android:layout_height="wrap_content" />
+                android:text="Σχετικά με ..."
+                android:textSize="30dp"/>
 
                 <TextView
                     android:id="@+id/textView_aboutus"
-                    android:layout_width="197dp"
-                    android:layout_height="214dp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/imageView_aboutus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp" />
 
                 <TextView
                     android:id="@+id/textView_aboutus2"
-                    android:layout_width="197dp"
-                    android:layout_height="214dp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <ImageView
                     android:id="@+id/imageView_aboutus2"
                     android:layout_width="178dp"
                     android:layout_height="165dp" />
 
-            </LinearLayout>
-
                 <TextView
                     android:id="@+id/textView_aboutus3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/textView_aboutus4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/textView_aboutus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
 
         </LinearLayout>

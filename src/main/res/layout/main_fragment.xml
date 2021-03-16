@@ -47,7 +47,7 @@
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
                     android:src="@drawable/ic_aboutus_foreground"
-                    android:background="@null"/>
+                    android:background="?selectableItemBackgroundBorderless"/>
 
 
              </LinearLayout>
@@ -76,13 +76,14 @@
                  app:layout_constraintEnd_toStartOf="@id/layout_calendar"
                  app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="100dp"
                     android:layout_height="100dp"
 
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/ic_news_foreground" />
+                    android:src="@drawable/ic_news_foreground"
+                    android:background="?selectableItemBackgroundBorderless"/>
 
              </LinearLayout>
               <TextView
@@ -111,13 +112,14 @@
                  app:layout_constraintStart_toEndOf="@id/layout_news"
                  app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="100dp"
                     android:layout_height="100dp"
 
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/ic_calendar_foreground" />
+                    android:src="@drawable/ic_calendar_foreground"
+                    android:background="?selectableItemBackgroundBorderless"/>
 
              </LinearLayout>
               <TextView
@@ -148,12 +150,13 @@
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@id/layout_about_us">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_lessons_foreground" />
+                      android:src="@drawable/ic_lessons_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -182,13 +185,14 @@
                   app:layout_constraintStart_toEndOf="@id/layout_lessons"
                   app:layout_constraintTop_toBottomOf="@id/layout_news">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_teachers_foreground" />
+                      android:src="@drawable/ic_teachers_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -217,13 +221,14 @@
                   app:layout_constraintStart_toEndOf="@id/layout_teachers2"
                   app:layout_constraintTop_toBottomOf="@id/layout_calendar">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_bus_foreground" />
+                      android:src="@drawable/ic_bus_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -252,13 +257,14 @@
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@id/layout_lessons">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_distance_learning_foreground" />
+                      android:src="@drawable/ic_distance_learning_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -285,13 +291,14 @@
                   app:layout_constraintStart_toEndOf="@id/layout_distance_learning"
                   app:layout_constraintTop_toBottomOf="@id/layout_teachers2">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_usefuldoc_foreground" />
+                      android:src="@drawable/ic_usefuldoc_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -319,13 +326,14 @@
                   app:layout_constraintStart_toEndOf="@id/layout_usefuldoc"
                   app:layout_constraintTop_toBottomOf="@id/layout_bus">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_instructions_foreground" />
+                      android:src="@drawable/ic_instructions_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -354,13 +362,14 @@
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@id/layout_distance_learning">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_facebook_foreground" />
+                      android:src="@drawable/ic_facebook_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -387,13 +396,14 @@
                   app:layout_constraintStart_toEndOf="@id/layout_facebook"
                   app:layout_constraintTop_toBottomOf="@id/layout_usefuldoc">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_apps_foreground" />
+                      android:src="@drawable/ic_apps_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
@@ -421,13 +431,14 @@
                   app:layout_constraintStart_toEndOf="@id/layout_apps"
                   app:layout_constraintTop_toBottomOf="@id/layout_instructions">
 
-                  <ImageView
+                  <ImageButton
                       android:layout_width="100dp"
                       android:layout_height="100dp"
 
                       android:contentDescription="@string/app_name"
                       android:padding="8dp"
-                      android:src="@drawable/ic_upodomes_foreground" />
+                      android:src="@drawable/ic_upodomes_foreground"
+                      android:background="?selectableItemBackgroundBorderless"/>
 
               </LinearLayout>
               <TextView
