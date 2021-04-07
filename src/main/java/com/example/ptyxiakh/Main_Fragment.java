@@ -20,7 +20,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Main_Fragment extends Fragment {
+public class Main_Fragment extends Fragment implements View.OnClickListener {
 
 
 
@@ -34,21 +34,40 @@ public class Main_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.main_fragment, container, false);
 
-        //open about fragment click on about button
+        //set the button views
         ImageButton aboutusbtn = view.findViewById(R.id.about_us_button);
+        ImageButton lessonbtn = view.findViewById(R.id.lessons_button);
 
-        aboutusbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //check if there is a internet connection and call the About_Fragment
-                if (new MainActivity().isConnected(view)) {
-                    ((MainActivity) getActivity()).callAsyncClass();
-                }
-
-            }
-        });
-
+        /**
+         * set on click to every button in the main fragment
+         * so it can open the fragment
+         */
+        aboutusbtn.setOnClickListener(this::onClick);
+        lessonbtn.setOnClickListener(this::onClick);
         return view;
     }
 
+    /**
+     * Οταν γινεται click σε ενα button στο main fragment ελεγχει εαν υπάρχει συνδεση στο internet
+     * και μετα καλεί την μεθοδο callAsync η οποια εκτελεί την κλάση που τραβάει τα δεδομένα απο το
+     * site
+     * @param v
+     */
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.about_us_button :
+                // call the About_Fragment
+                ((MainActivity)getActivity()).callAsyncTask("GET_ABOUT");
+                break;
+            case R.id.lessons_button :
+                // call the About_Fragment
+                ((MainActivity)getActivity()).callAsyncTask("GET_LESSONS");
+                break;
+
+        }
+
+    }
 }

@@ -151,6 +151,7 @@
                   app:layout_constraintTop_toBottomOf="@id/layout_about_us">
 
                   <ImageButton
+                      android:id="@+id/lessons_button"
                       android:layout_width="100dp"
                       android:layout_height="100dp"
                       android:contentDescription="@string/app_name"
