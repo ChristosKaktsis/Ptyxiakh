@@ -44,7 +44,7 @@ public class About_fragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static About_fragment newInstance(ArrayList<String> param1, ArrayList<String> param2) {
-        About_fragment fragment = new About_fragment();
+        final About_fragment fragment = new About_fragment();
         Bundle args = new Bundle();
         args.putStringArrayList(ARG_PARAM1, param1);
         args.putStringArrayList(ARG_PARAM2, param2);

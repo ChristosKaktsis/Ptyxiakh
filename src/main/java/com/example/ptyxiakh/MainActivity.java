@@ -80,10 +80,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Add the fragment in the Frame layout
     public void setCurrentFragment(Fragment fragment){
+        
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.flfragment, fragment)
-                .addToBackStack("")
+                .addToBackStack(null)
                 .commit();
+
     }
 
     //

@@ -37,6 +37,7 @@ public class Main_Fragment extends Fragment implements View.OnClickListener {
         //set the button views
         ImageButton aboutusbtn = view.findViewById(R.id.about_us_button);
         ImageButton lessonbtn = view.findViewById(R.id.lessons_button);
+        ImageButton schedulebtn = view.findViewById(R.id.schedule_button);
 
         /**
          * set on click to every button in the main fragment
@@ -44,6 +45,7 @@ public class Main_Fragment extends Fragment implements View.OnClickListener {
          */
         aboutusbtn.setOnClickListener(this::onClick);
         lessonbtn.setOnClickListener(this::onClick);
+        schedulebtn.setOnClickListener(this::onClick);
         return view;
     }
 
@@ -63,8 +65,12 @@ public class Main_Fragment extends Fragment implements View.OnClickListener {
                 ((MainActivity)getActivity()).callAsyncTask("GET_ABOUT");
                 break;
             case R.id.lessons_button :
-                // call the About_Fragment
+                // call the DisplayLessons
                 ((MainActivity)getActivity()).callAsyncTask("GET_LESSONS");
+                break;
+            case R.id.schedule_button :
+                // call the Schedule_fragment
+                ((MainActivity)getActivity()).setCurrentFragment(new ScheduleFragment());
                 break;
 
         }

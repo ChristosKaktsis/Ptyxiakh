@@ -88,6 +88,13 @@ public class DisplayLessons extends Fragment  implements View.OnClickListener{
         examinoTextView = view.findViewById(R.id.examinoTextView);
 
         //
+        //set the examino and the Adapter table
+        //
+        setTheAdapter(examino.get(0));
+        examinoTextView.setText(examino.get(0));
+
+
+        //
         //set the buttons
         //
         Button examino_1_button = view.findViewById(R.id.examino_1_Button);
@@ -113,11 +120,6 @@ public class DisplayLessons extends Fragment  implements View.OnClickListener{
         examino_10_button.setOnClickListener(this::onClick);
 
 
-
-        //
-        //Call async from here
-        //
-        //((MainActivity) getActivity()).callAsyncTask();
 
         return view;
     }
@@ -195,5 +197,6 @@ public class DisplayLessons extends Fragment  implements View.OnClickListener{
         lessonAdapter = new LessonAdapter(currentItems, this.getContext());
 
         recyclerView.setAdapter(lessonAdapter);
+        
     }
 }
